@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services</title>
     <style>
-        /* መሰረታዊ የጀርባ አቀማመጥ (Main Background Styling) */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f1f5f9;
@@ -17,26 +16,41 @@
             justify-content: center;
             min-height: 100vh;
         }
-
-        /* የገጹ ዋና አርዕስት (Main Section Title) */
+        nav {
+            width: 100%;
+            max-width: 1100px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 14px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: opacity 0.3s ease;
+        }
+        nav a:hover {
+            opacity: 0.8;
+        }
         .section-title {
             text-align: center;
             color: #1e293b;
             font-size: 32px;
             margin-bottom: 40px;
         }
-
-        /* 3ቱን ካርዶች አንድ ላይ የሚይዘው ትልቅ ሳጥን (The Container) */
         .services-container {
             display: flex;
-            flex-wrap: wrap; /* በስልክ ሲከፈት አንዱ ከሌላው በታች እንዲወርድ ያደርገዋል */
+            flex-wrap: wrap; 
             justify-content: center;
-            gap: 25px; /* በካርዶቹ መካከል ያለውን ክፍተት ያስተካክላል */
+            gap: 25px; 
             max-width: 1100px;
             width: 100%;
         }
-
-        /* የእያንዳንዱ ካርድ አጠቃላይ ውበት (Individual Card Styling) */
         .service-card {
             background-color: white;
             width: 280px;
@@ -44,34 +58,24 @@
             border-radius: 16px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
-            text-align: left; /* ፅሁፉን ከግራ ይጀምረዋል */
+            text-align: left; 
         }
-
-        /* ማውሱ ሲጠጋ (Hover ሲያደርግ) ካርዱ ወደ ላይ እንዲነሳ ማድረግ */
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
         }
-
-        /* ለእያንዳንዱ ካርድ የተለየ ቀለም ያለው የላይኛው መስመር (Border Tops) */
-        .card-1 { border-top: 5px solid #10b981; } /* አረንጓዴ */
-        .card-2 { border-top: 5px solid #3b82f6; } /* ሰማያዊ */
-        .card-3 { border-top: 5px solid #ff5722; } /* ብርቱካናማ */
-
-        /* የምልክቶቹ መጠን (Icon Styling) */
+        .card-1 { border-top: 5px solid #10b981; } 
+        .card-2 { border-top: 5px solid #3b82f6; } 
+        .card-3 { border-top: 5px solid #ff5722; } 
         .icon {
             font-size: 45px;
             margin-bottom: 20px;
         }
-
-        /* የአገልግሎቶቹ ስም (Title Styling) */
         .service-card h3 {
             margin: 0 0 12px 0;
             color: #1e293b;
             font-size: 22px;
         }
-
-        /* የማብራሪያ ፅሁፉ ውበት (Description Text Styling) */
         .service-card p {
             color: #64748b;
             font-size: 15px;
@@ -81,30 +85,30 @@
     </style>
 </head>
 <body>
+    <nav>
+        <a href="login.html">Login</a>
+        <a href="product.html">Products</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="service.html">Services</a>
+    </nav>
 
     <h1 class="section-title">Our Professional Services</h1>
-
     <div class="services-container">
-
         <div class="service-card card-1">
             <div class="icon">💻</div>
             <h3>Web Design</h3>
             <p>We build beautiful, responsive and modern HTML/CSS layout interfaces for global remote companies.</p>
         </div>
-
         <div class="service-card card-2">
             <div class="icon">🎨</div>
             <h3>Graphic Design</h3>
             <p>We create professional brand logos, beautiful flyers, and modern user interface UI styles for your business.</p>
         </div>
-
         <div class="service-card card-3">
             <div class="icon">📈</div>
             <h3>SEO Marketing</h3>
             <p>We optimize your business website to rank number one on Google search and grow your online customers fast.</p>
         </div>
-
     </div>
-
 </body>
 </html>
