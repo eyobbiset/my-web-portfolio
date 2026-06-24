@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalog</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px 10px;
+        }
+
+        .catalog-header {
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 30px;
+        }
+
+        .catalog-header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .catalog-header p {
+            font-size: 15px;
+            opacity: 0.9;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px;
+            padding: 0 5px;
+        }
+
+        .product-card {
+            background-color: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-image-container {
+            width: 100%;
+            height: 220px;
+            position: relative;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+        }
+
+        .product-image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background-color: #e53e3e;
+            color: white;
+            padding: 4px 10px;
+            font-size: 11px;
+            font-weight: 700;
+            border-radius: 30px;
+            text-transform: uppercase;
+            z-index: 1;
+        }
+
+        .product-content {
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            background-color: #fafafa;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        .product-category {
+            font-size: 11px;
+            color: #764ba2;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+
+        .product-title {
+            font-size: 16px;
+            color: #333333;
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 15px;
+            color: #fbbf24;
+            font-size: 13px;
+        }
+
+        .rating-count {
+            color: #777777;
+            font-size: 12px;
+        }
+
+        .product-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+            padding-top: 12px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .product-price {
+            font-size: 20px;
+            font-weight: 800;
+            color: #333333;
+        }
+
+        .product-price .old-price {
+            font-size: 13px;
+            color: #a0aec0;
+            text-decoration: line-through;
+            font-weight: 500;
+            margin-left: 5px;
+        }
+
+        .add-to-cart-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .add-to-cart-btn svg {
+            width: 16px;
+            height: 16px;
+            fill: white;
+        }
+
+        .add-to-cart-btn:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="catalog-header">
+        <h1>Trending Products</h1>
+        <p>Explore our top-rated collection</p>
+    </div>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <div class="product-image-container">
+                <span class="product-badge">Sale</span>
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80" alt="Headphones">
+            </div>
+            <div class="product-content">
+                <div class="product-category">Electronics</div>
+                <div class="product-title">Wireless Noise-Cancelling Headphones</div>
+                <div class="product-rating">
+                    ★ ★ ★ ★ ☆ <span class="rating-count">(124)</span>
+                </div>
+                <div class="product-footer">
+                    <div class="product-price">$199<span class="old-price">$249</span></div>
+                    <button class="add-to-cart-btn" title="Add to Cart">
+                        <svg viewBox="0 0 576 512">
+                            <path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image-container">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80" alt="Smart Watch">
+            </div>
+            <div class="product-content">
+                <div class="product-category">Gadgets</div>
+                <div class="product-title">Waterproof Fitness Tracker Smart Watch</div>
+                <div class="product-rating">
+                    ★ ★ ★ ★ ★ <span class="rating-count">(89)</span>
+                </div>
+                <div class="product-footer">
+                    <div class="product-price">$89</div>
+                    <button class="add-to-cart-btn" title="Add to Cart">
+                        <svg viewBox="0 0 576 512">
+                            <path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image-container">
+                <span class="product-badge">New</span>
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&q=80" alt="Shoes">
+            </div>
+            <div class="product-content">
+                <div class="product-category">Footwear</div>
+                <div class="product-title">Sport Running Sneakers with Soft Cushion</div>
+                <div class="product-rating">
+                    ★ ★ ★ ★ ☆ <span class="rating-count">(72)</span>
+                </div>
+                <div class="product-footer">
+                    <div class="product-price">$150</div>
+                    <button class="add-to-cart-btn" title="Add to Cart">
+                        <svg viewBox="0 0 576 512">
+                            <path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
