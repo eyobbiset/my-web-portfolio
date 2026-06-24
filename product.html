@@ -10,7 +10,6 @@
             margin: 0;
             padding: 0;
         }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea, #764ba2);
@@ -21,24 +20,42 @@
             min-height: 100vh;
             padding: 20px 10px;
         }
-
+        nav {
+            width: 100%;
+            max-width: 1000px;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 12px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: opacity 0.3s ease;
+        }
+        nav a:hover {
+            opacity: 0.8;
+        }
         .catalog-header {
             text-align: center;
             color: #ffffff;
             margin-bottom: 30px;
         }
-
         .catalog-header h1 {
             font-size: 28px;
             font-weight: 700;
             margin-bottom: 8px;
         }
-
         .catalog-header p {
             font-size: 15px;
             opacity: 0.9;
         }
-
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -47,7 +64,6 @@
             max-width: 1000px;
             padding: 0 5px;
         }
-
         .product-card {
             background-color: #ffffff;
             border-radius: 16px;
@@ -58,12 +74,10 @@
             flex-direction: column;
             width: 100%;
         }
-
         .product-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
         }
-
         .product-image-container {
             width: 100%;
             height: 220px;
@@ -74,13 +88,11 @@
             justify-content: center;
             padding: 15px;
         }
-
         .product-image-container img {
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
         }
-
         .product-badge {
             position: absolute;
             top: 12px;
@@ -94,7 +106,6 @@
             text-transform: uppercase;
             z-index: 1;
         }
-
         .product-content {
             padding: 18px;
             display: flex;
@@ -103,7 +114,6 @@
             background-color: #fafafa;
             border-top: 1px solid #f1f5f9;
         }
-
         .product-category {
             font-size: 11px;
             color: #764ba2;
@@ -112,7 +122,6 @@
             letter-spacing: 0.5px;
             margin-bottom: 5px;
         }
-
         .product-title {
             font-size: 16px;
             color: #333333;
@@ -120,7 +129,6 @@
             margin-bottom: 8px;
             line-height: 1.4;
         }
-
         .product-rating {
             display: flex;
             align-items: center;
@@ -129,12 +137,10 @@
             color: #fbbf24;
             font-size: 13px;
         }
-
         .rating-count {
             color: #777777;
             font-size: 12px;
         }
-
         .product-footer {
             display: flex;
             align-items: center;
@@ -143,13 +149,11 @@
             padding-top: 12px;
             border-top: 1px solid #e2e8f0;
         }
-
         .product-price {
             font-size: 20px;
             font-weight: 800;
             color: #333333;
         }
-
         .product-price .old-price {
             font-size: 13px;
             color: #a0aec0;
@@ -157,7 +161,6 @@
             font-weight: 500;
             margin-left: 5px;
         }
-
         .add-to-cart-btn {
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
@@ -171,13 +174,11 @@
             justify-content: center;
             transition: all 0.3s ease;
         }
-
         .add-to-cart-btn svg {
             width: 16px;
             height: 16px;
             fill: white;
         }
-
         .add-to-cart-btn:hover {
             transform: scale(1.05);
             opacity: 0.9;
@@ -185,14 +186,18 @@
     </style>
 </head>
 <body>
+    <nav>
+        <a href="login.html">Login</a>
+        <a href="product.html">Products</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="service.html">Services</a>
+    </nav>
 
     <div class="catalog-header">
         <h1>Trending Products</h1>
         <p>Explore our top-rated collection</p>
     </div>
-
     <div class="product-grid">
-
         <div class="product-card">
             <div class="product-image-container">
                 <span class="product-badge">Sale</span>
@@ -214,7 +219,6 @@
                 </div>
             </div>
         </div>
-
         <div class="product-card">
             <div class="product-image-container">
                 <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80" alt="Smart Watch">
@@ -235,7 +239,6 @@
                 </div>
             </div>
         </div>
-
         <div class="product-card">
             <div class="product-image-container">
                 <span class="product-badge">New</span>
@@ -257,8 +260,6 @@
                 </div>
             </div>
         </div>
-
     </div>
-
 </body>
 </html>
