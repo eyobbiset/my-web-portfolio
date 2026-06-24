@@ -10,7 +10,6 @@
             margin: 0;
             padding: 0;
         }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea, #764ba2);
@@ -21,24 +20,42 @@
             min-height: 100vh;
             padding: 40px 15px;
         }
-
+        nav {
+            width: 100%;
+            max-width: 1000px;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 12px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: opacity 0.3s ease;
+        }
+        nav a:hover {
+            opacity: 0.8;
+        }
         .pricing-header {
             text-align: center;
             color: #ffffff;
             margin-bottom: 30px;
         }
-
         .pricing-header h1 {
             font-size: 32px;
             font-weight: 700;
             margin-bottom: 10px;
         }
-
         .pricing-header p {
             font-size: 16px;
             opacity: 0.9;
         }
-
         .toggle-container {
             display: flex;
             align-items: center;
@@ -49,20 +66,17 @@
             font-weight: 600;
             font-size: 15px;
         }
-
         .switch {
             position: relative;
             display: inline-block;
             width: 50px;
             height: 26px;
         }
-
         .switch input { 
             opacity: 0;
             width: 0;
             height: 0;
         }
-
         .slider {
             position: absolute;
             cursor: pointer;
@@ -74,7 +88,6 @@
             transition: .4s;
             border-radius: 34px;
         }
-
         .slider:before {
             position: absolute;
             content: "";
@@ -86,15 +99,12 @@
             transition: .4s;
             border-radius: 50%;
         }
-
         input:checked + .slider {
             background-color: #34a853;
         }
-
         input:checked + .slider:before {
             transform: translateX(24px);
         }
-
         .badge-discount {
             background-color: #fbbf24;
             color: #333333;
@@ -103,7 +113,6 @@
             border-radius: 10px;
             margin-left: 5px;
         }
-
         .pricing-container {
             display: flex;
             flex-wrap: wrap;
@@ -112,7 +121,6 @@
             width: 100%;
             max-width: 1000px;
         }
-
         .price-card {
             background-color: #ffffff;
             flex: 1;
@@ -127,21 +135,17 @@
             word-wrap: break-word;
             transition: all 0.3s ease;
         }
-
         .price-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
         }
-
         .price-card.popular {
             border: 3px solid #764ba2;
             transform: scale(1.03);
         }
-
         .price-card.popular:hover {
             transform: scale(1.03) translateY(-10px);
         }
-
         .popular-badge {
             position: absolute;
             top: -15px;
@@ -155,7 +159,6 @@
             border-radius: 20px;
             text-transform: uppercase;
         }
-
         .plan-name {
             font-size: 20px;
             color: #764ba2;
@@ -164,27 +167,23 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-
         .plan-price {
             font-size: 50px;
             font-weight: 800;
             color: #333333;
             margin-bottom: 25px;
         }
-
         .plan-price span {
             font-size: 45px;
             color: #777777;
             font-weight: 400;
         }
-
         .features-list {
             list-style: none;
             margin-bottom: 35px;
             text-align: left;
             padding-left: 5px;
         }
-
         .features-list li {
             font-size: 14px;
             color: #4a5568;
@@ -193,7 +192,6 @@
             align-items: center;
             gap: 12px;
         }
-
         .features-list li::before {
             content: "✓";
             color: #34a853;
@@ -207,18 +205,15 @@
             justify-content: center;
             font-size: 11px;
         }
-
         .features-list li.disabled {
             color: #a0aec0;
             text-decoration: line-through;
         }
-
         .features-list li.disabled::before {
             content: "✕";
             color: #e53e3e;
             background-color: #fed7d7;
         }
-
         .action-btn {
             width: 100%;
             padding: 14px;
@@ -231,14 +226,12 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-
         .price-card.featured-btn .action-btn,
         .price-card.popular .action-btn {
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
         }
-
         .action-btn:hover {
             transform: translateY(-2px);
             opacity: 0.95;
@@ -247,12 +240,17 @@
     </style>
 </head>
 <body>
+    <nav>
+        <a href="login.html">Login</a>
+        <a href="product.html">Products</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="service.html">Services</a>
+    </nav>
 
     <div class="pricing-header">
         <h1>Our Pricing Plans</h1>
         <p>Choose the perfect plan for your business</p>
     </div>
-
     <div class="toggle-container">
         <span>Monthly</span>
         <label class="switch">
@@ -261,9 +259,7 @@
         </label>
         <span>Yearly <span class="badge-discount">Save 20%</span></span>
     </div>
-
     <div class="pricing-container">
-
         <div class="price-card">
             <div class="plan-name">Basic</div>
             <div class="plan-price">$<span class="amount">9</span><span class="duration">/mo</span></div>
@@ -276,7 +272,6 @@
             </ul>
             <button class="action-btn">Get Started</button>
         </div>
-
         <div class="price-card popular">
             <div class="popular-badge">Most Popular</div>
             <div class="plan-name">Pro</div>
@@ -290,7 +285,6 @@
             </ul>
             <button class="action-btn">Choose Pro</button>
         </div>
-
         <div class="price-card featured-btn">
             <div class="plan-name">Enterprise</div>
             <div class="plan-price">$<span class="amount">99</span><span class="duration">/mo</span></div>
@@ -303,17 +297,13 @@
             </ul>
             <button class="action-btn">Contact Us</button>
         </div>
-
     </div>
-
     <script>
         const toggle = document.getElementById('price-toggle');
         const amounts = document.querySelectorAll('.amount');
         const durations = document.querySelectorAll('.duration');
-
         const monthlyPrices = [9, 29, 99];
         const yearlyPrices = [86, 278, 950];
-
         toggle.addEventListener('change', function() {
             if (toggle.checked) {
                 amounts.forEach((amount, index) => {
@@ -332,6 +322,5 @@
             }
         });
     </script>
-
 </body>
 </html>
